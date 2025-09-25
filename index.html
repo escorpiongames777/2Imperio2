@@ -297,9 +297,9 @@
       const chosen = chooseNumber();
       registerUse(chosen.id);
 
+      // === Evento de conversión pedido: "registro" (custom) ===
       try {
-        fbq('track', 'Lead', { content_name: 'ContactClick', phone: chosen.phone });
-        fbq('trackCustom', 'ContactClick', { phone: chosen.phone });
+        fbq('trackCustom', 'registro', { phone: chosen.phone });
       } catch(_) {}
 
       const finalUrl = buildWaUrl(chosen.phone, customText || DEFAULT_MSG);
